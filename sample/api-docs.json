@@ -1,0 +1,195 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "User Management API",
+    "version": "1.0.0",
+    "description": "회원 가입부터 로그인, 회원정보 조회/수정/삭제까지 포함한 예시 API 문서입니다."
+  },
+  "servers": [
+    { "url": "https://api.example.com", "description": "Production" }
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "회원가입",
+        "description": "신규 회원을 등록합니다.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/RegisterRequest" },
+              "example": {
+                "email": "user@example.com",
+                "password": "Passw0rd!",
+                "name": "홍길동"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "회원가입 성공",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/RegisterResponse" }
+              }
+            }
+          },
+          "400": { "description": "잘못된 요청" }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "로그인",
+        "description": "이메일과 비밀번호를 이용해 로그인합니다.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LoginRequest" },
+              "example": {
+                "email": "user@example.com",
+                "password": "Passw0rd!"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "로그인 성공",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LoginResponse" }
+              }
+            }
+          },
+          "401": { "description": "로그인 실패" }
+        }
+      }
+    },
+    "/users/me": {
+      "get": {
+        "tags": ["User"],
+        "summary": "회원정보 조회",
+        "description": "토큰 기반으로 본인의 정보를 조회합니다.",
+        "security": [{ "bearerAuth": [] }],
+        "responses": {
+          "200": {
+            "description": "조회 성공",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/UserProfile" }
+              }
+            }
+          },
+          "401": { "description": "인증 실패" }
+        }
+      }
+    },
+    "/users/me": {
+      "put": {
+        "tags": ["User"],
+        "summary": "회원정보 수정",
+        "description": "사용자의 프로필 정보를 수정합니다.",
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateUserRequest" },
+              "example": {
+                "name": "홍길동",
+                "phone": "010-1234-5678"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "수정 성공",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/UserProfile" }
+              }
+            }
+          },
+          "401": { "description": "인증 실패" }
+        }
+      }
+    },
+    "/users/me": {
+      "delete": {
+        "tags": ["User"],
+        "summary": "회원 탈퇴",
+        "description": "회원 계정을 삭제합니다.",
+        "security": [{ "bearerAuth": [] }],
+        "responses": {
+          "200": { "description": "삭제 성공" },
+          "401": { "description": "인증 실패" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "RegisterRequest": {
+        "type": "object",
+        "required": ["email", "password", "name"],
+        "properties": {
+          "email": { "type": "string", "format": "email" },
+          "password": { "type": "string" },
+          "name": { "type": "string" }
+        }
+      },
+      "RegisterResponse": {
+        "type": "object",
+        "properties": {
+          "userId": { "type": "string" },
+          "createdAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "LoginRequest": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "email": { "type": "string", "format": "email" },
+          "password": { "type": "string" }
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "accessToken": { "type": "string" },
+          "refreshToken": { "type": "string" }
+        }
+      },
+      "UserProfile": {
+        "type": "object",
+        "properties": {
+          "userId": { "type": "string" },
+          "email": { "type": "string", "format": "email" },
+          "name": { "type": "string" },
+          "phone": { "type": "string" },
+          "createdAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "UpdateUserRequest": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "phone": { "type": "string" }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
