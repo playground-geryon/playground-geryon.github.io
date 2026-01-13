@@ -1,4 +1,4 @@
-import{r as c,j as e}from"./vendor-DuO8O3Ni.js";import{M as _}from"./monaco-editor-CUhaLqMq.js";import{u as G,P as B,B as h,T as b,S as $,N,O as Z,Q as R,R as w,U as X,Y as P,a as W,bf as Q,n as U,W as V}from"./mui-BrtMkxyc.js";import"./excel-CUMakpxJ.js";import"./monaco-p3yQZa36.js";const O=`OrderNo: ORD-2024-0001
+import{r as c,j as e}from"./vendor-DuO8O3Ni.js";import{M as _}from"./monaco-editor-Cz9NNAw7.js";import{u as G,P as B,B as h,T as b,S as $,N,O as Z,Q as R,R as w,U as X,Y as P,a as W,bf as Q,n as U,W as V}from"./mui-BrtMkxyc.js";import"./excel-CUMakpxJ.js";import"./monaco-p3yQZa36.js";const O=`OrderNo: ORD-2024-0001
 Card No: 1234-5678-9012-3456
 Tel: 010-1234-5678
 Email: user@example.com
