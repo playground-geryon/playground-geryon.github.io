@@ -1,0 +1,330 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "node-mkp8sdz1-n3mz",
+      "label": "로그인",
+      "description": "",
+      "method": "POST",
+      "url": "{{DevServerHost}}/auth/login",
+      "body": "{\n  \"username\": \"admin\",\n  \"password\": \"password1234\"\n}",
+      "headers": [
+        {
+          "id": "hdr-mkp8sdz1-02uo",
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "useGlobalHeaders": false,
+      "passThroughs": [
+        {
+          "id": "map-mkp8sdz1-qgnw",
+          "label": "",
+          "jsonPath": "$.name",
+          "targetKey": "",
+          "enabled": true
+        }
+      ],
+      "queryParams": [
+        {
+          "id": "query-mkp8sdz1-pzf4",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "localVariables": [],
+      "formBodyEntries": [
+        {
+          "id": "form-mkp8sdz1-bnlx",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "responsePreview": "{\n  \"status\": \"idle\"\n}",
+      "autoTriggerNext": true,
+      "enabled": true,
+      "status": "idle"
+    },
+    {
+      "id": "node-mkp8sdz1-ams2",
+      "label": "게시물 리스트 조회",
+      "description": "",
+      "method": "GET",
+      "url": "{{DevServerHost}}/posts",
+      "body": "{\n  \n}",
+      "headers": [
+        {
+          "id": "hdr-mkp8sdz1-vgea",
+          "key": "Authorization",
+          "value": "Banner {{token}}",
+          "enabled": true
+        }
+      ],
+      "useGlobalHeaders": true,
+      "passThroughs": [
+        {
+          "id": "map-mkp8sdz1-id27",
+          "label": "",
+          "jsonPath": "$.name",
+          "targetKey": "",
+          "enabled": true
+        }
+      ],
+      "queryParams": [
+        {
+          "id": "query-mkp8sdz1-33l9",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "localVariables": [],
+      "formBodyEntries": [
+        {
+          "id": "form-mkp8sdz1-rjz1",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "responsePreview": "{\n  \"status\": \"idle\"\n}",
+      "autoTriggerNext": true,
+      "enabled": true,
+      "status": "idle"
+    },
+    {
+      "id": "node-mkp8sdz1-9eyz",
+      "label": "게시물 작성",
+      "description": "",
+      "method": "POST",
+      "url": "{{DevServerHost}}/posts",
+      "body": "{\n  \"title\": \"첫 번째 글\",\n  \"content\": \"{{token}}\",\n  \"{{token}}\":\"kkk\"\n}",
+      "headers": [
+        {
+          "id": "hdr-mkp8sdz1-qi4j",
+          "key": "Authorization",
+          "value": "Banner {{token}}",
+          "enabled": true
+        }
+      ],
+      "useGlobalHeaders": false,
+      "passThroughs": [
+        {
+          "id": "map-mkp8sdz1-8p6m",
+          "label": "",
+          "jsonPath": "$.name",
+          "targetKey": "",
+          "enabled": true
+        }
+      ],
+      "queryParams": [
+        {
+          "id": "query-mkp8sdz1-bgr7",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "localVariables": [],
+      "formBodyEntries": [
+        {
+          "id": "form-mkp8sdz1-bfk8",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "responsePreview": "{\n  \"status\": \"idle\"\n}",
+      "autoTriggerNext": true,
+      "enabled": true,
+      "status": "idle"
+    },
+    {
+      "id": "node-mkp8sdz1-2emc",
+      "label": "게시물 상세 조회",
+      "description": "",
+      "method": "GET",
+      "url": "http://localhost:4000/posts/{id}",
+      "body": "{\n  \n}",
+      "headers": [
+        {
+          "id": "hdr-mkp8sdz1-y6yv",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "useGlobalHeaders": true,
+      "passThroughs": [
+        {
+          "id": "map-mkp8sdz1-vzfu",
+          "label": "",
+          "jsonPath": "$.name",
+          "targetKey": "",
+          "enabled": true
+        }
+      ],
+      "queryParams": [
+        {
+          "id": "query-mkp8sdz1-7vxd",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "localVariables": [
+        {
+          "id": "var-mkp8sdz1-6qzp",
+          "key": "id",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "formBodyEntries": [
+        {
+          "id": "form-mkp8sdz1-qusq",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "responsePreview": "{\n  \"status\": \"idle\"\n}",
+      "autoTriggerNext": false,
+      "enabled": true,
+      "status": "idle"
+    },
+    {
+      "id": "node-mkp8sdz1-853e",
+      "label": "게시물 수정",
+      "description": "",
+      "method": "PUT",
+      "url": "http://localhost:4000/posts/{id}",
+      "body": "{\n  \"title\": \"첫 번째 글\",\n  \"content\": \"내용\"\n}",
+      "headers": [
+        {
+          "id": "hdr-mkp8sdz1-yjg9",
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "useGlobalHeaders": false,
+      "passThroughs": [
+        {
+          "id": "map-mkp8sdz1-avi1",
+          "label": "",
+          "jsonPath": "$.name",
+          "targetKey": "",
+          "enabled": true
+        }
+      ],
+      "queryParams": [
+        {
+          "id": "query-mkp8sdz1-f307",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "localVariables": [
+        {
+          "id": "var-mkp8sdz1-a8s8",
+          "key": "id",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "formBodyEntries": [
+        {
+          "id": "form-mkp8sdz1-v5f9",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "responsePreview": "{\n  \"status\": \"idle\"\n}",
+      "autoTriggerNext": false,
+      "enabled": true,
+      "status": "idle"
+    },
+    {
+      "id": "node-mkp8sdz1-pyl2",
+      "label": "게시물 삭제",
+      "description": "",
+      "method": "DELETE",
+      "url": "http://localhost:4000/posts/{id}",
+      "body": "{\n  \n}",
+      "headers": [
+        {
+          "id": "hdr-mkp8sdz1-gmjr",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "useGlobalHeaders": true,
+      "passThroughs": [
+        {
+          "id": "map-mkp8sdz1-n6hw",
+          "label": "",
+          "jsonPath": "$.name",
+          "targetKey": "",
+          "enabled": true
+        }
+      ],
+      "queryParams": [
+        {
+          "id": "query-mkp8sdz1-ngxb",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "localVariables": [
+        {
+          "id": "var-mkp8sdz1-mhi4",
+          "key": "id",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "formBodyEntries": [
+        {
+          "id": "form-mkp8sdz1-y3at",
+          "key": "",
+          "value": "",
+          "enabled": true
+        }
+      ],
+      "responsePreview": "{\n  \"status\": \"idle\"\n}",
+      "autoTriggerNext": false,
+      "enabled": true,
+      "status": "idle"
+    }
+  ],
+  "globalHeaders": [
+    {
+      "id": "gh-mko5594x-ap3f",
+      "key": "Content-Type",
+      "value": "application/json",
+      "enabled": true
+    }
+  ],
+  "globalVariables": [
+    {
+      "id": "var-mkp4qmiq-kuuq",
+      "key": "DevServerHost",
+      "value": "http://localhost:4000",
+      "enabled": true
+    },
+    {
+      "id": "var-mkp8t0z7-rr02",
+      "key": "token",
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3NjkwNzM2NzksImV4cCI6MTc2OTA4MDg3OX0.TG0-7OLjXp8aLL8u86LRLJdApw7PjT0LZ1NzMgMIrow",
+      "enabled": true
+    }
+  ]
+}
