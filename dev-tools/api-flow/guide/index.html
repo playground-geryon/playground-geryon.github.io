@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>API Flow Builder – OfSimple</title>
+  <meta name="description" content="API 등록 및 플로우 기반 테스트">
+  <link rel="canonical" href="https://ofsimple.com/dev-tools/api-flow/guide/">
+  <meta name="robots" content="index,follow">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="API Flow Builder">
+  <meta property="og:description" content="API 등록 및 플로우 기반 테스트">
+  <meta property="og:url" content="https://ofsimple.com/dev-tools/api-flow/guide/">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f5f5f5;
+      --panel:#ffffff;
+      --panel-border:#e5e7eb;
+      --card:#ffffff;
+      --card-border:#e5e7eb;
+      --text:#111827;
+      --text-dim:#6b7280;
+      --primary:#1976d2;
+      --topbar-h:64px;
+      --footer-h:90px;
+    }
+    html,body{margin:0;padding:0;height:100%}
+    body{
+      background:var(--bg); color:var(--text);
+      font-family:"Noto Sans KR","Roboto","Arial",sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      overflow:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .page{
+      height:100vh;
+      overflow:hidden;
+    }
+    .scroll{
+      position:relative;
+      height:100%;
+      overflow:auto;
+      padding:calc(var(--topbar-h) + 18px) 20px calc(var(--footer-h) + 24px);
+      box-sizing:border-box;
+      -ms-overflow-style:none;
+      scrollbar-width:none;
+    }
+    .scroll::-webkit-scrollbar{width:0;height:0}
+    .topbar{
+      position:fixed;left:0;right:0;top:0;
+      height:var(--topbar-h);display:flex;align-items:center;justify-content:space-between;
+      padding:0 20px;background:var(--panel);border-bottom:1px solid var(--panel-border);
+      z-index:10;
+      box-sizing:border-box;
+    }
+    .home-link{
+      display:flex;align-items:center;gap:6px;color:#4b5563;
+      padding:8px 10px;border-radius:8px;border:1px solid rgba(17,24,39,.08);
+      background:#f9fafb;
+    }
+    .home-link .material-icons-outlined{font-size:18px;line-height:18px}
+    .brand{font-weight:700;color:#111827;opacity:.9}
+    .container{
+      width:clamp(960px,80vw,1200px);
+      margin:0 auto;
+    }
+    h1{font-size:28px;margin:14px 0 6px}
+    .desc{color:var(--text-dim);margin:0 0 10px}
+    .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:14px;margin:10px 0}
+    .btns{display:flex;gap:8px;margin-top:8px}
+    .btn{padding:9px 12px;border-radius:10px;font-size:14px;border:1px solid #d1d5db;background:#ffffff;color:#111827;display:inline-flex;align-items:center;gap:8px}
+    .btn.primary{border-color:var(--primary);background:#e3f2fd;color:#0f4c81}
+    .btn .material-icons-outlined{font-size:18px}
+    .section-title{font-size:18px;font-weight:700;margin:12px 0 6px}
+    .guide-item{padding:12px;border-radius:10px;border:1px solid #e5e7eb;background:#fafafa;margin:10px 0}
+    .guide-title{font-weight:700;margin:0 0 4px}
+    .guide-desc{color:var(--text-dim);margin:0 0 6px}
+    .guide-result{padding:8px 10px;border-radius:8px;background:#eef2ff;border:1px solid #e0e7ff;color:#1f2a44;font-size:13px}
+    ul{margin:8px 0 12px 20px}
+    li{margin:4px 0}
+    .footer{
+      position:fixed;left:0;right:0;bottom:0;height:var(--footer-h);
+      display:flex;align-items:center;justify-content:center;
+      background:var(--panel);color:#6b7280;border-top:1px solid var(--panel-border);
+      box-sizing:border-box;
+    }
+
+    @media (max-width: 960px){
+      .scroll{padding:calc(var(--topbar-h) + 16px) 12px calc(var(--footer-h) + 20px)}
+      .container{width:100%;box-sizing:border-box;overflow-x:hidden}
+      .btns{flex-direction:column;gap:10px;min-width:0}
+      .btn{width:100%;max-width:100%;min-width:0;box-sizing:border-box;justify-content:center}
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"API Flow Builder","description":"API 등록 및 플로우 기반 테스트","inLanguage":"ko-KR","publisher":{"@type":"Organization","name":"OfSimple"},"url":"https://ofsimple.com/dev-tools/api-flow/guide/"}</script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+    <a class="home-link" href="/" aria-label="홈으로 이동">
+      <span class="material-icons-outlined" aria-hidden="true">home</span>
+      <span>Home</span>
+    </a>
+    <div class="brand">OfSimple</div>
+    </header>
+    <main class="scroll">
+      <div class="container">
+        <h1>API Flow Builder</h1>
+        <p class="desc">API 등록 및 플로우 기반 테스트</p>
+        <section class="card">
+      <div class="section-title">소개</div>
+      <p style="margin:6px 0">API를 등록하고 플로우로 호출합니다.</p>
+        </section>
+
+        <section class="card">
+      <div class="section-title">가이드</div>
+      
+        <div class="guide-item">
+          <div class="guide-title">공통 설정</div>
+          <div class="guide-desc">공통 헤더/전역 변수를 관리합니다.</div>
+          <ul><li>[공통 설정] 클릭</li><li>헤더 또는 변수 탭에서 추가/수정</li></ul>
+          <div class="guide-result">결과: 공통 값이 전체 노드에 재사용됩니다.</div>
+        </div>
+      
+        <div class="guide-item">
+          <div class="guide-title">공통 헤더 사용</div>
+          <div class="guide-desc">노드별로 공통 헤더 적용 여부를 설정합니다.</div>
+          <ul><li>노드 상세에서 [공통 헤더 사용] 스위치 ON/OFF</li></ul>
+          <div class="guide-result">결과: 선택한 노드에 공통 헤더가 포함됩니다.</div>
+        </div>
+      
+        <div class="guide-item">
+          <div class="guide-title">API 추가</div>
+          <div class="guide-desc">노드를 추가하고 목록에서 선택합니다.</div>
+          <ul><li>상단 [추가] 클릭</li><li>좌측 리스트에서 노드 선택</li><li>노드명 추가</li><li>노드 설명 추가</li><li>URL/메서드 입력</li><li>요청 항목 설정</li></ul>
+          <div class="guide-result">결과: 선택한 노드의 상세 설정이 우측에 표시됩니다.</div>
+        </div>
+      
+        <div class="guide-item">
+          <div class="guide-title">플로우 실행</div>
+          <div class="guide-desc">등록된 노드를 실행합니다. </div>
+          <ul><li>플로우 연결</li><li>실행 클릭</li></ul>
+          <div class="guide-result">결과: 응답이 우측에 표시됩니다.</div>
+        </div>
+      
+        <div class="guide-item">
+          <div class="guide-title">전달 변수 설정</div>
+          <div class="guide-desc">응답에서 값을 추출해 다음 노드로 전달합니다.</div>
+          <ul><li>[다음 노드 자동 실행] 활성화</li><li>[전달 변수 설정]에서 JSONPath 입력</li></ul>
+          <div class="guide-result">결과: 추출된 값이 {{변수명}} 형태로 사용됩니다.</div>
+        </div>
+      
+        <div class="guide-item">
+          <div class="guide-title">저장 [중요]</div>
+          <div class="guide-desc">현재 플로우 상태를 저장합니다. 저장을 안하면 추가된 노드 정보가 초기화 됩니다.</div>
+          <ul><li>상단 [저장] 클릭</li></ul>
+          <div class="guide-result">결과: 변경 사항이 저장되고 저장 표시가 사라집니다.</div>
+        </div>
+      
+        <div class="guide-item">
+          <div class="guide-title">요청 탭</div>
+          <div class="guide-desc">요청 구성 요소를 탭별로 설정합니다.</div>
+          <ul><li>요청 헤더 / Query / Path / Request Value / 요청 로그 탭 전환</li></ul>
+          <div class="guide-result">결과: 요청 데이터가 분리된 탭에서 관리됩니다.</div>
+        </div>
+      
+        <div class="guide-item">
+          <div class="guide-title">응답 탭</div>
+          <div class="guide-desc">응답 본문/헤더를 탭별로 확인합니다.</div>
+          <ul><li>응답 본문 / 응답 헤더 탭 전환</li><li>필요 시 [실행] 클릭</li></ul>
+          <div class="guide-result">결과: 응답 결과와 헤더를 각각 확인할 수 있습니다.</div>
+        </div>
+      
+      <div class="btns">
+        <a class="btn primary" href="/dev-tools/api-flow"><span class="material-icons-outlined">play_arrow</span>실행하기</a>
+      </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">© 2026 OfSimple</footer>
+  </div>
+</body>
+</html>
