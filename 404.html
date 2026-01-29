@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,5 +16,32 @@
     </script>
   </head>
   <body></body>
-</html>
+</html> -->
 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      ;(function () {
+        // /playground-geryon/tools/qr-maker  -> base: /playground-geryon/
+        var segments = window.location.pathname.split('/').filter(Boolean)
+        var base = segments.length > 0 ? '/' + segments[0] + '/' : '/'
+
+        var fullPath =
+          window.location.pathname + window.location.search + window.location.hash
+
+        // base prefix 제거해서 앱 라우터에 맞는 path만 남김
+        var path = fullPath.indexOf(base) === 0
+          ? fullPath.slice(base.length)
+          : fullPath.replace(/^\//, '')
+
+        // 최종: /playground-geryon/?redirect=tools/qr-maker
+        window.location.replace(base + '?redirect=' + encodeURIComponent(path))
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>
