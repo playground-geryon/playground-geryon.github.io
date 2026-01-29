@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>OfSimple</title>
     <meta
       name="description"
@@ -14,6 +17,20 @@
       content="OfSimple, 이미지 도구, 개발 도구, 유틸리티, QR 생성기, JSON 도구, OpenAPI, 색상 팔레트, HTML 탐색, 로또 분석, 이미지 퍼즐 무료웹도구, QR Maker"
     />
     <meta name="robots" content="index,follow" />
+    <style>
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+      }
+      input,
+      textarea,
+      select,
+      button {
+        font-size: 16px;
+      }
+    </style>
     <script type="text/javascript">
       ;(function (l) {
         var params = new URLSearchParams(l.search)
@@ -24,7 +41,58 @@
         }
       })(window.location)
     </script>
-    <script type="module" crossorigin src="/assets/index-CWRDxzAr.js"></script>
+
+
+<script type="text/javascript">
+  // ios 키보드 올라오고 원위치 처리 
+  ;(function () {
+    var lastScrollY = 0
+    var locked = false
+
+    function isEditable(el) {
+      if (!el) return false
+      var tag = (el.tagName || '').toLowerCase()
+      return tag === 'input' || tag === 'textarea' || tag === 'select' || el.isContentEditable
+    }
+
+    function lockScroll() {
+      if (locked) return
+      locked = true
+      lastScrollY = window.scrollY || window.pageYOffset || 0
+      document.body.style.position = 'fixed'
+      document.body.style.top = -lastScrollY + 'px'
+      document.body.style.left = '0'
+      document.body.style.right = '0'
+      document.body.style.width = '100%'
+    }
+
+    function unlockScroll() {
+      if (!locked) return
+      locked = false
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.left = ''
+      document.body.style.right = ''
+      document.body.style.width = ''
+      setTimeout(function () {
+        window.scrollTo(0, lastScrollY)
+        setTimeout(function () {
+          window.scrollTo(0, lastScrollY)
+        }, 50)
+      }, 50)
+    }
+
+    window.addEventListener('focusin', function (e) {
+      if (isEditable(e.target)) lockScroll()
+    })
+
+    window.addEventListener('focusout', function () {
+      setTimeout(unlockScroll, 250)
+    })
+  })()
+</script>
+
+    <script type="module" crossorigin src="/assets/index-zVpYmpKO.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/excel-CUMakpxJ.js">
     <link rel="modulepreload" crossorigin href="/assets/tree-sitter-DJeWk4Ia.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-DyxFRNuv.js">
