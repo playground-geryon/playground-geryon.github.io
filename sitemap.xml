@@ -23,5 +23,6 @@
   <url><loc>https://ofsimple.com/fun/text-melody/guide/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ofsimple.com/game/mabinogi-craft/guide/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ofsimple.com/tools/cross-stitch/guide/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ofsimple.com/settings/guide/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ofsimple.com/setting/theme/guide/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ofsimple.com/setting/indexdb-manager/guide/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
 </urlset>
