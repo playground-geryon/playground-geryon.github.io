@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Excel → JSON – OfSimple</title>
   <meta name="description" content="엑셀 데이터를 JSON으로 변환">
+  <meta name="keywords" content="Excel, →, JSON, 엑셀, 데이터를, JSON으로, 변환, 시트, 헤더, 매핑, 후, 내보냅니다., 배열로, 변환합니다., v3">
   <link rel="canonical" href="https://ofsimple.com/dev-tools/convert/excel-to-json/guide/">
   <meta name="robots" content="index,follow">
 
@@ -68,7 +69,8 @@
       width:clamp(960px,80vw,1200px);
       margin:0 auto;
     }
-    h1{font-size:28px;margin:14px 0 6px}
+    h1{font-size:28px;margin:0}
+    .title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .desc{color:var(--text-dim);margin:0 0 10px}
     .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:14px;margin:10px 0}
     .btns{display:flex;gap:8px;margin-top:8px}
@@ -109,7 +111,10 @@
     </header>
     <main class="scroll">
       <div class="container">
-        <h1>Excel → JSON</h1>
+        <div class="title-row">
+          <h1>Excel → JSON</h1>
+          <a class="btn primary" href="/dev-tools/convert/excel-to-json"><span class="material-icons-outlined">play_arrow</span>실행하기</a>
+        </div>
         <p class="desc">엑셀 데이터를 JSON으로 변환</p>
         <section class="card">
       <div class="section-title">소개</div>

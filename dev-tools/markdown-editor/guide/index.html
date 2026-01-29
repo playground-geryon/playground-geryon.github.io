@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>마크다운 편집기 – OfSimple</title>
   <meta name="description" content="좌측 마크다운, 우측 HTML 프리뷰">
+  <meta name="keywords" content="마크다운, 편집기, 좌측, 우측, HTML, 프리뷰, 실시간, 렌더링과, 복사, 지원, 마크다운을, 편집하고, HTML을, 미리보기, 다운로드, 제공">
   <link rel="canonical" href="https://ofsimple.com/dev-tools/markdown-editor/guide/">
   <meta name="robots" content="index,follow">
 
@@ -68,7 +69,8 @@
       width:clamp(960px,80vw,1200px);
       margin:0 auto;
     }
-    h1{font-size:28px;margin:14px 0 6px}
+    h1{font-size:28px;margin:0}
+    .title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .desc{color:var(--text-dim);margin:0 0 10px}
     .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:14px;margin:10px 0}
     .btns{display:flex;gap:8px;margin-top:8px}
@@ -109,7 +111,10 @@
     </header>
     <main class="scroll">
       <div class="container">
-        <h1>마크다운 편집기</h1>
+        <div class="title-row">
+          <h1>마크다운 편집기</h1>
+          <a class="btn primary" href="/dev-tools/markdown-editor"><span class="material-icons-outlined">play_arrow</span>실행하기</a>
+        </div>
         <p class="desc">좌측 마크다운, 우측 HTML 프리뷰</p>
         <section class="card">
       <div class="section-title">소개</div>

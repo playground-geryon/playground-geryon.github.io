@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>암기장 생성기 – OfSimple</title>
   <meta name="description" content="자동 빈칸 생성 &amp; 난이도 분석">
+  <meta name="keywords" content="암기장, 생성기, 자동, 빈칸, 생성, &amp;, 난이도, 분석, 문장, 난이도를, 분석하고, 빈칸을, IDB에, 저장합니다., 암기장을, 만들고, 문장형, 사전형, 문제를, 편집·암기·퀴즈로">
   <link rel="canonical" href="https://ofsimple.com/tools/memorization-lab/guide/">
   <meta name="robots" content="index,follow">
 
@@ -68,7 +69,8 @@
       width:clamp(960px,80vw,1200px);
       margin:0 auto;
     }
-    h1{font-size:28px;margin:14px 0 6px}
+    h1{font-size:28px;margin:0}
+    .title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .desc{color:var(--text-dim);margin:0 0 10px}
     .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:14px;margin:10px 0}
     .btns{display:flex;gap:8px;margin-top:8px}
@@ -109,7 +111,10 @@
     </header>
     <main class="scroll">
       <div class="container">
-        <h1>암기장 생성기</h1>
+        <div class="title-row">
+          <h1>암기장 생성기</h1>
+          <a class="btn primary" href="/tools/memorization-lab"><span class="material-icons-outlined">play_arrow</span>실행하기</a>
+        </div>
         <p class="desc">자동 빈칸 생성 &amp; 난이도 분석</p>
         <section class="card">
       <div class="section-title">소개</div>

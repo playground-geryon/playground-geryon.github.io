@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>이미지 퍼즐 – OfSimple</title>
   <meta name="description" content="이미지를 조각 퍼즐로 즐기기">
+  <meta name="keywords" content="이미지, 퍼즐, 이미지를, 조각, 퍼즐로, 즐기기, 난이도와, 그리드를, 조정하여, 맞춰, 보세요., 분할해, 맞추는, 게임입니다.">
   <link rel="canonical" href="https://ofsimple.com/fun/image-puzzle/guide/">
   <meta name="robots" content="index,follow">
 
@@ -68,7 +69,8 @@
       width:clamp(960px,80vw,1200px);
       margin:0 auto;
     }
-    h1{font-size:28px;margin:14px 0 6px}
+    h1{font-size:28px;margin:0}
+    .title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .desc{color:var(--text-dim);margin:0 0 10px}
     .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:14px;margin:10px 0}
     .btns{display:flex;gap:8px;margin-top:8px}
@@ -109,7 +111,10 @@
     </header>
     <main class="scroll">
       <div class="container">
-        <h1>이미지 퍼즐</h1>
+        <div class="title-row">
+          <h1>이미지 퍼즐</h1>
+          <a class="btn primary" href="/fun/image-puzzle"><span class="material-icons-outlined">play_arrow</span>실행하기</a>
+        </div>
         <p class="desc">이미지를 조각 퍼즐로 즐기기</p>
         <section class="card">
       <div class="section-title">소개</div>

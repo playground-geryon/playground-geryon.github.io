@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Text Melody – OfSimple</title>
   <meta name="description" content="텍스트를 음계로 변환하여 재생">
+  <meta name="keywords" content="Text, Melody, 텍스트를, 음계로, 변환하여, 재생, 문자별, 음계를, 설정하고, 재생할, 수, 있는, 실험, 도구입니다., 재생합니다.">
   <link rel="canonical" href="https://ofsimple.com/fun/text-melody/guide/">
   <meta name="robots" content="index,follow">
 
@@ -68,7 +69,8 @@
       width:clamp(960px,80vw,1200px);
       margin:0 auto;
     }
-    h1{font-size:28px;margin:14px 0 6px}
+    h1{font-size:28px;margin:0}
+    .title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .desc{color:var(--text-dim);margin:0 0 10px}
     .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:14px;margin:10px 0}
     .btns{display:flex;gap:8px;margin-top:8px}
@@ -109,7 +111,10 @@
     </header>
     <main class="scroll">
       <div class="container">
-        <h1>Text Melody</h1>
+        <div class="title-row">
+          <h1>Text Melody</h1>
+          <a class="btn primary" href="/fun/text-melody"><span class="material-icons-outlined">play_arrow</span>실행하기</a>
+        </div>
         <p class="desc">텍스트를 음계로 변환하여 재생</p>
         <section class="card">
       <div class="section-title">소개</div>

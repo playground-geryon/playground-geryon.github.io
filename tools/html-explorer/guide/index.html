@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Html Viewer – OfSimple</title>
   <meta name="description" content="원격 URL HTML 조회·DOM 스플린터">
+  <meta name="keywords" content="Html, Viewer, 원격, URL, HTML, 조회·DOM, 스플린터, GET, →, 뷰, +, 선택, 영역, 텍스트, 추출, 코드를, 직접, 입력해, DOM을, 탐색하고">
   <link rel="canonical" href="https://ofsimple.com/tools/html-explorer/guide/">
   <meta name="robots" content="index,follow">
 
@@ -68,7 +69,8 @@
       width:clamp(960px,80vw,1200px);
       margin:0 auto;
     }
-    h1{font-size:28px;margin:14px 0 6px}
+    h1{font-size:28px;margin:0}
+    .title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .desc{color:var(--text-dim);margin:0 0 10px}
     .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:14px;margin:10px 0}
     .btns{display:flex;gap:8px;margin-top:8px}
@@ -109,7 +111,10 @@
     </header>
     <main class="scroll">
       <div class="container">
-        <h1>Html Viewer</h1>
+        <div class="title-row">
+          <h1>Html Viewer</h1>
+          <a class="btn primary" href="/tools/html-explorer"><span class="material-icons-outlined">play_arrow</span>실행하기</a>
+        </div>
         <p class="desc">원격 URL HTML 조회·DOM 스플린터</p>
         <section class="card">
       <div class="section-title">소개</div>

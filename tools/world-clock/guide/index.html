@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>세계 시계 – OfSimple</title>
   <meta name="description" content="세계 주요 도시의 현재 시간">
+  <meta name="keywords" content="세계, 시계, 주요, 도시의, 현재, 시간, 로컬, 기준으로, 국가, 도시를, 검색해, 비교합니다., 시간을">
   <link rel="canonical" href="https://ofsimple.com/tools/world-clock/guide/">
   <meta name="robots" content="index,follow">
 
@@ -68,7 +69,8 @@
       width:clamp(960px,80vw,1200px);
       margin:0 auto;
     }
-    h1{font-size:28px;margin:14px 0 6px}
+    h1{font-size:28px;margin:0}
+    .title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .desc{color:var(--text-dim);margin:0 0 10px}
     .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:14px;margin:10px 0}
     .btns{display:flex;gap:8px;margin-top:8px}
@@ -109,7 +111,10 @@
     </header>
     <main class="scroll">
       <div class="container">
-        <h1>세계 시계</h1>
+        <div class="title-row">
+          <h1>세계 시계</h1>
+          <a class="btn primary" href="/tools/world-clock"><span class="material-icons-outlined">play_arrow</span>실행하기</a>
+        </div>
         <p class="desc">세계 주요 도시의 현재 시간</p>
         <section class="card">
       <div class="section-title">소개</div>
