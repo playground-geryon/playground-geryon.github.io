@@ -26,20 +26,23 @@
     <title>Redirecting...</title>
     <script type="text/javascript">
       ;(function () {
-        // /playground-geryon/tools/qr-maker  -> base: /playground-geryon/
-        var segments = window.location.pathname.split('/').filter(Boolean)
-        var base = segments.length > 0 ? '/' + segments[0] + '/' : '/'
+        var l = window.location
 
-        var fullPath =
-          window.location.pathname + window.location.search + window.location.hash
+        // ✅ 유저 페이지(root 배포)이므로 base는 무조건 '/'
+        var base = '/'
 
-        // base prefix 제거해서 앱 라우터에 맞는 path만 남김
-        var path = fullPath.indexOf(base) === 0
-          ? fullPath.slice(base.length)
-          : fullPath.replace(/^\//, '')
+        // ✅ 이미 redirect 파라미터가 있으면 "재포장"하지 말고 그냥 base로만 보냄(루프 방지)
+        var sp = new URLSearchParams(l.search)
+        if (sp.has('redirect')) {
+          l.replace(base + l.search + l.hash)
+          return
+        }
 
-        // 최종: /playground-geryon/?redirect=tools/qr-maker
-        window.location.replace(base + '?redirect=' + encodeURIComponent(path))
+        // ✅ 현재 요청된 경로(/image/photo-meta 등)를 redirect 값으로 넘김
+        // base('/') 기준으로 앞의 '/'만 제거해서 'image/photo-meta?...' 형태로 전달
+        var path = (l.pathname + l.search + l.hash).replace(/^\//, '')
+
+        l.replace(base + '?redirect=' + encodeURIComponent(path))
       })()
     </script>
   </head>
